@@ -1,26 +1,19 @@
-package Lesson1;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
-
-public class Homework {
-    static int num = 0;
-    public static void main(String[] args) {
-
-        System.out.println(fib(BigInteger.valueOf(40)));
-        System.out.println(num);
-    }
-
-    public static BigInteger fib(BigInteger n) {
-        num++;
-        if (n.equals(BigInteger.ONE)) {
-            return BigInteger.ZERO;
-
-        }
-        if (n.equals(BigInteger.TWO)) {
-           return BigInteger.ONE;
-        }
-        return fib(n.subtract(BigInteger.ONE)).add(fib(n.subtract(BigInteger.TWO)));
-    }
-}
+//        1. Сделано
+//
+//        2.
+//        a) О(1)
+//        b) О(n)
+//        c) О(1)
+//        d) O(n)
+//        e) О(n)
+//
+//        3.
+//        a) O(n*logn) - 140 000 итераций
+//        b) O(n^2) - 25 млн. итераций (почти угадала)
+//        c) O(n) - 3000 (а реально около 10000) достаточно близко :)
+//        d) O(n) - думала, что количество будет стремиться к бесконечности.
+//            А оказалось, что количество итераций = 10000.
+//            И думала, что сложность O(!n), а оказалось, что просто n.
+//        e) O(n^2) - думала, что тут тоже O(!n), по тестам оказалось, что сложность ближе всего к O(2^n).
+//            Количество итераций с помощью кода посчитать не удалось, так как IntelliJ либо зависает,
+//            либо я не дождалась расчетов. Приблизительно количество операций будет более 1 триллиона.
