@@ -45,6 +45,26 @@ public class TestMain4 {
         }
 
         linkedList.display();
+
+        System.out.println("\n\nВторое задание:");
+
+        Deque<String> deque = new DequeImpl<>();
+        deque.insertFirst("Первый");
+        deque.insertFirst("Второй");
+        deque.insertLast("Третий");
+        System.out.println(deque.readFirst());
+        System.out.println(deque.getLast());
+        deque.insertFirst("Четвертый");
+        deque.insertLast("Пятый");
+        deque.insertLast("Шестой");
+        deque.insertFirst("Седьмой");
+        System.out.println(deque.getLast());
+        System.out.println(deque.getLast());
+        System.out.println(deque.getFirst());
+
     }
+
+
+
 
 }

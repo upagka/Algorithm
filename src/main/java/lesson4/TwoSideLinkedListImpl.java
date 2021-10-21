@@ -22,6 +22,7 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
         }
 
         last.next = newNode;
+        newNode.prev = last;
         last = newNode;
         size++;
     }
@@ -34,6 +35,14 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
             last = null;
         }
 
+        return removedValue;
+    }
+
+    public E removeLast() {
+        E removedValue = last.item;
+        last.prev.next = null;
+        last = last.prev;
+        size--;
         return removedValue;
     }
 
@@ -71,4 +80,6 @@ public class TwoSideLinkedListImpl<E> extends SimpleLinkedListImpl<E> implements
     public E getLast() {
         return last.item;
     }
+
+    public E getFirst() {return first.item; }
 }
