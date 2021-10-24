@@ -1,45 +1,40 @@
 package lesson6;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Test {
     public static void main(String[] args) {
 
-        Tree<Integer> tree = new TreeImpl<>();
+        TreeImpl<Integer> tree = new TreeImpl<>(4);
 
-        tree.add(60);
-        tree.add(50);
-        tree.add(66);
-        tree.add(40);
-        tree.add(55);
-        tree.add(70);
-        tree.add(31);
-        tree.add(45);
-        tree.add(42);
-        tree.add(43);
-        tree.add(69);
-        tree.add(67);
-        tree.add(68);
-        tree.add(81);
-
-/*        tree.display();
-
-        tree.remove(55);
-
-        tree.display();
-
-        tree.remove(67);
-
-        tree.display();
-
-        tree.remove(40);*/
-
-        tree.display();
-
-        tree.traverse(Tree.TraversMode.IN_ORDER);
-        tree.traverse(Tree.TraversMode.PRE_ORDER);
-        tree.traverse(Tree.TraversMode.POST_ORDER);
+        ArrayList<TreeImpl> trees = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            trees.add(generateTree(4, 20));
+            trees.get(i).display();
+            System.out.println(trees.get(i).isTreeBalanced());
+        }
 
 
 
+
+//        trees.get(1).display();
+//
+//        trees.get(1).traverse(Tree.TraversMode.IN_ORDER);
+//        trees.get(1).traverse(Tree.TraversMode.PRE_ORDER);
+//        trees.get(1).traverse(Tree.TraversMode.POST_ORDER);
 
     }
+
+    private static TreeImpl generateTree(int maxLevel, int tries) {
+        TreeImpl newTree = new TreeImpl(4);
+        for (int i = 0; i < tries; i++) {
+            Random rand = new Random();
+            int int_random = rand.nextInt(51) - 25;
+            newTree.add(int_random);
+        }
+        return newTree;
+    }
+
+
 }
