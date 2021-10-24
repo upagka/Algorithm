@@ -56,6 +56,6 @@ public class Thing {
                 "name='" + name + '\'' +
                 ", weight=" + weight +
                 ", price=" + price +
-                '}';
+                "}\n";
     }
 }
