@@ -4,7 +4,7 @@ public interface Graph {
 
     void addVertex(String label);
 
-    boolean addEdge(String startLabel, String secondLabel, String... others);
+    boolean addEdge(String startLabel, String secondLabel, int weight);
     boolean addEdge(String startLabel, String secondLabel);
 
     int getSize();
@@ -13,12 +13,14 @@ public interface Graph {
 
     /**
      * англ. Depth-first search, DFS
+     * @return
      */
-    void dfs(String startLabel);
+    int dfs(String startLabel);
 
     /**
      * англ. breadth-first search, BFS
      */
     void bfs(String startLabel);
 
+    void bestWay(String startLabel, String finishLabel);
 }
